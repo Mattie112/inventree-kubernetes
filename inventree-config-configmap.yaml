@@ -21,3 +21,4 @@ data:
   INVENTREE_ADMIN_USER: "johndoe"
   INVENTREE_ADMIN_EMAIL: "johndoe@example.com"
   INVENTREE_ADMIN_PASSWORD: "secret"
+  INVENTREE_SITE_URL: "https://your.site.url"
