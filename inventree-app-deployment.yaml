@@ -22,8 +22,8 @@ spec:
           - configMapRef:
               name: inventree-config
         image: inventree/inventree:stable
-        workingDir: /home/inventree/InvenTree
-        command: ["python", "manage.py", "migrate"]
+          workingDir: /home/inventree/
+          command: ["invoke", "update"]
         volumeMounts:
         - mountPath: /home/inventree/data
           name: inventree-data      
