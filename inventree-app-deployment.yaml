@@ -50,16 +50,19 @@ spec:
         ports:
         - containerPort: 80
         volumeMounts:
-        - mountPath: /etc/nginx/conf.d/default.conf
-          name: config
-          subPath: nginx.prod.conf
-          readOnly: true
+          - mountPath: "/etc/nginx/conf.d/default.conf"
+            subPath: "default.conf"
+            name: nginx-config
+            readOnly: true
         - mountPath: /var/www        
           name: inventree-data                  
       volumes:
-      - name: config
-        configMap:
-          name: inventree-nginx-config
+        - name: nginx-config
+          configMap:
+            name: inventree-nginx-conf
+            items:
+              - key: default.conf
+                path: default.conf
       - name: inventree-data
         persistentVolumeClaim:
           claimName: inventree-data
